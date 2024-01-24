@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Agenda de contatos</title>
+        <link rel="stylesheet" href="./main.css">
+</head>
+<body> 
+        <h2>Agenda de Contatos</h2> 
+                <table id="agenda">
+                <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                </tr>
+</table>
+                <form id="formContato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome"><br><br>
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone"><br><br>
+                <input type="button" value="Cadastrar" onclick="adicionarContato()">
+        </form>
+        <script>
+                function adicionarContato() {
+                var nome = document.getElementById("nome").value;
+                var telefone = document.getElementById("telefone").value;
+                var table = document.getElementById("agenda");
+                var row = table.insertRow(-1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.innerHTML = nome;
+                cell2.innerHTML = telefone;
+        }
+</script>
+</body>
+</html>
